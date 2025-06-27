@@ -1,4 +1,4 @@
 <h1> Niraj-Portfolio</h1>
-< /hr>
+</hr>
 
 My Personal Portfolio Repository
