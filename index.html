@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niraj's Portfolio</title>
-    <link rel="icon" type="png"
-    href="./assets/images/port-icon.png">
+    <link rel="icon" type="png" href="./assets/images/port-icon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Header Section -->
     <header>
         <nav>
             <div class="logo">Portfolio</div>
+
+            <!-- Hamburger icon -->
+            <button class="hamburger" onclick="toggleSidebar()" aria-label="Open navigation menu">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <!-- Main nav for large screens -->
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -22,6 +32,16 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+
+        <!-- Sidebar menu for small screens -->
+        <div class="sidebar" id="sidebar">
+            <button href="javascript:void(0)" class="close-btn" onclick="toggleSidebar()" aria-label="Close navigation menu">✕</button>
+            <a href="#home" onclick="toggleSidebar()">Home</a>
+            <a href="#about" onclick="toggleSidebar()">About</a>
+            <a href="#blog" onclick="toggleSidebar()">Blog</a>
+            <a href="#projects" onclick="toggleSidebar()">Projects</a>
+            <a href="#contact" onclick="toggleSidebar()">Contact</a>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -34,7 +54,9 @@
                 </div>
                 <h1>Hi, I'm <span class="highlight">Niraj Shevade</span></h1>
                 <h2 class="role">IT Engineer | Web Developer</h2>
-                <p class="hero-description">I'm passionate about web development, data structures and algorithms, machine learning and currently learning new technologies. Here you can find my projects and skills.</p>
+                <p class="hero-description">I'm passionate about web development, data structures and algorithms,
+                    machine learning and currently learning new technologies. Here you can find my projects and skills.
+                </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="cta-button primary">View My Work</a>
                     <a href="#contact" class="cta-button secondary">Contact Me</a>
@@ -48,8 +70,10 @@
         <h2>About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Hi, I'm Niraj! Pursuing B.Tech (2nd Year) Exploring Data Structures and Algorithms Passionate about Artificial Intelligence and Machine Learning. 
-                    I'm a beginner web developer with a strong desire to learn and grow in the field. I recently participated in Smart India Hackathon and I'm excited to apply my skills to real-world projects.</p>
+                <p>Hi, I'm Niraj! Pursuing B.Tech (2nd Year) Exploring Data Structures and Algorithms Passionate about
+                    Artificial Intelligence and Machine Learning.
+                    I'm a beginner web developer with a strong desire to learn and grow in the field. I recently
+                    participated in Smart India Hackathon and I'm excited to apply my skills to real-world projects.</p>
                 <div class="skills">
                     <h3>My Skills</h3>
                     <ul>
@@ -88,7 +112,8 @@
                 <img src="./assets/images/ife.png" alt="Project 1">
                 <h3>Indian Food Express</h3>
                 <p>Authentic indian food delivary website</p>
-                <a href="https://nirajshevade.github.io/Indian-Food-Express/index.html" target="_blank"  class="project-link">View Project</a>
+                <a href="https://nirajshevade.github.io/Indian-Food-Express/index.html" target="_blank"
+                    class="project-link">View Project</a>
             </div>
             <div class="project-card" data-type="html">
                 <img src="./assets/images/class.png" alt="Project 2">
@@ -114,8 +139,10 @@
                 <div class="blog-content">
                     <div class="blog-date">December 12, 2024</div>
                     <h3>Women's Employement: an individual pillar of indian democracy</h3>
-                    <p>The economic empowerment of women is not just a gender issue but a critical factor in India's journey toward becoming a $5 trillion economy. 
-                        By recognizing and supporting women's participation in the workforce, we can unlock tremendous potential for economic growth and social development.</p>
+                    <p>The economic empowerment of women is not just a gender issue but a critical factor in India's
+                        journey toward becoming a $5 trillion economy.
+                        By recognizing and supporting women's participation in the workforce, we can unlock tremendous
+                        potential for economic growth and social development.</p>
                     <a href="https://nirajshevade.github.io/My_Blog/" target="_blank" class="blog-link">Read More</a>
                 </div>
             </div>
@@ -159,9 +186,9 @@
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 // Add active class to clicked button
                 button.classList.add('active');
-                
+
                 const filterValue = button.getAttribute('data-filter');
-                
+
                 projectCards.forEach(card => {
                     if (filterValue === 'all' || card.getAttribute('data-type') === filterValue) {
                         card.style.display = 'block';
@@ -171,6 +198,20 @@
                 });
             });
         });
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("show");
+
+            // Lock/unlock scroll
+            if (sidebar.classList.contains("show")) {
+                document.body.style.overflow = "hidden";
+            } else {
+                document.body.style.overflow = "";
+            }
+        }
+
     </script>
 </body>
+
 </html>
