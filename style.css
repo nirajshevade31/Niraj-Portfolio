@@ -168,6 +168,8 @@ nav {
     align-items: center;
     padding: 6rem 5% 5rem;
     background-color: var(--light-gray);
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
@@ -248,6 +250,9 @@ nav {
 .about {
     padding: 4rem 5%;
     background-color: white;
+    position: relative;
+    z-index: 2;
+    margin-top: 0;
 }
 
 .about h2 {
@@ -287,6 +292,8 @@ nav {
 .projects {
     padding: 5rem 5%;
     background-color: #f8f9fa;
+    position: relative;
+    z-index: 3;
 }
 
 .projects h2 {
@@ -338,6 +345,8 @@ nav {
     padding: 5rem 5%;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 4;
 }
 
 .contact h2 {
@@ -417,6 +426,8 @@ footer {
 .blog {
     padding: 5rem 5%;
     background-color: white;
+    position: relative;
+    z-index: 3;
 }
 
 .blog h2 {
@@ -594,4 +605,425 @@ footer {
 
 .nav-links a:hover {
     color: var(--secondary-color);
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Loader Styles */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    z-index: 9999;
+    transition: width 0.3s ease;
+}
+
+/* Enhanced Transitions */
+.hero-text {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.image-container {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.image-container img {
+    transition: transform 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-buttons {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-text {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.skills {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.learning {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center;
+}
+
+.blog-card {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center;
+}
+
+.contact-info {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Enhanced Button Effects */
+.cta-button, .project-link, .blog-link {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before, .project-link::before, .blog-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-button:hover::before, .project-link:hover::before, .blog-link:hover::before {
+    left: 100%;
+}
+
+/* Skill Items Animation */
+.skills li, .learning li {
+    transition: all 0.3s ease;
+    padding: 0.2rem 0;
+    cursor: pointer;
+}
+
+/* Social Links Enhanced Animation */
+.social-links a {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: inline-block;
+}
+
+.social-links a:hover {
+    animation: bounce 0.6s ease;
+}
+
+/* Hamburger Animation */
+.hamburger {
+    transition: all 0.3s ease;
+}
+
+.hamburger.active {
+    transform: rotate(90deg);
+}
+
+.hamburger-bar {
+    transition: all 0.3s ease;
+}
+
+.hamburger.active .hamburger-bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .hamburger-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .hamburger-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Sidebar Enhanced Animation */
+.sidebar {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.sidebar.show {
+    animation: slideIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.sidebar a {
+    transition: all 0.3s ease;
+    transform: translateX(-20px);
+    opacity: 0;
+}
+
+.sidebar.show a {
+    transform: translateX(0);
+    opacity: 1;
+    animation: fadeInLeft 0.3s ease forwards;
+}
+
+.sidebar.show a:nth-child(2) { animation-delay: 0.1s; }
+.sidebar.show a:nth-child(3) { animation-delay: 0.2s; }
+.sidebar.show a:nth-child(4) { animation-delay: 0.3s; }
+.sidebar.show a:nth-child(5) { animation-delay: 0.4s; }
+.sidebar.show a:nth-child(6) { animation-delay: 0.5s; }
+
+/* Hero Section Parallax */
+.hero {
+    will-change: transform;
+    overflow: hidden;
+}
+
+/* Ensure proper section stacking */
+section {
+    position: relative;
+}
+
+/* Project Filter Animation */
+.project-filter {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.project-filter::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.project-filter.active::after {
+    width: 100%;
+}
+
+.project-filter:hover {
+    transform: translateY(-2px);
+}
+
+/* Text Cursor Effect for Typing Animation */
+.role::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: var(--primary-color);
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Enhanced Card Hover Effects */
+.project-card:hover, .blog-card:hover {
+    transform: translateY(-10px) scale(1.02) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+
+.project-card:hover img, .blog-card:hover img {
+    transform: scale(1.1);
+    transition: transform 0.4s ease;
+}
+
+/* Stagger Animation for Multiple Elements */
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Section Reveal Animation */
+section {
+    transition: all 0.8s ease;
+}
+
+/* Highlight Animation */
+.highlight {
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.highlight:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Footer Animation */
+footer {
+    transition: all 0.3s ease;
+}
+
+footer:hover {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+/* Responsive Animation Adjustments */
+@media (max-width: 768px) {
+    .loader .spinner {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .project-card:hover, .blog-card:hover {
+        transform: translateY(-5px) scale(1.01) !important;
+    }
+}
+
+/* Performance Optimizations */
+.hero, .project-card, .blog-card, .social-links a {
+    will-change: transform;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
