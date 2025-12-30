@@ -27,6 +27,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -38,6 +39,7 @@
             <button href="javascript:void(0)" class="close-btn" onclick="toggleSidebar()" aria-label="Close navigation menu">✕</button>
             <a href="#home" onclick="toggleSidebar()">Home</a>
             <a href="#about" onclick="toggleSidebar()">About</a>
+            <a href="#experience" onclick="toggleSidebar()">Experience</a>
             <a href="#blog" onclick="toggleSidebar()">Blog</a>
             <a href="#projects" onclick="toggleSidebar()">Projects</a>
             <a href="#contact" onclick="toggleSidebar()">Contact</a>
@@ -94,6 +96,20 @@
                         <li>Node.js</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <h2>Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <div class="experience-header">
+                    <h3>Armtech AI Pvt. Ltd.</h3>
+                    <span class="experience-duration">May 2025 to Aug 2025</span>
+                </div>
+                <p class="experience-role">Full Stack Application Development Intern</p>
             </div>
         </div>
     </section>
@@ -260,6 +276,7 @@
                 { selector: '.image-container', animation: 'fadeInScale', delay: 600 },
                 { selector: '.hero-buttons', animation: 'fadeInUp', delay: 900 },
                 { selector: '.about-text', animation: 'fadeInLeft', delay: 0 },
+                { selector: '.experience-card', animation: 'fadeInUp', delay: 0 },
                 { selector: '.skills', animation: 'fadeInRight', delay: 200 },
                 { selector: '.learning', animation: 'fadeInRight', delay: 400 },
                 { selector: '.project-card', animation: 'fadeInUp', delay: 100 },
