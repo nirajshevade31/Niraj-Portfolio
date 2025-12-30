@@ -288,6 +288,55 @@ nav {
     font-size: 0.9rem;
 }
 
+/* Experience Section */
+.experience {
+    padding: 5rem 5%;
+    background-color: #f8f9fa;
+    position: relative;
+    z-index: 2;
+}
+
+.experience h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.experience-duration {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.experience-role {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
 /* Projects Section */
 .projects {
     padding: 5rem 5%;
@@ -892,6 +941,7 @@ footer {
 .sidebar.show a:nth-child(4) { animation-delay: 0.3s; }
 .sidebar.show a:nth-child(5) { animation-delay: 0.4s; }
 .sidebar.show a:nth-child(6) { animation-delay: 0.5s; }
+.sidebar.show a:nth-child(7) { animation-delay: 0.6s; }
 
 /* Hero Section Parallax */
 .hero {
